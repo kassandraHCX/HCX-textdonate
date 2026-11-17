@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Text HCX to Donate Today!</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffffff;
+      color: #222222;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      padding: 40px 16px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 10vw, 56px);
+      line-height: 1.15;
+      margin: 0 0 28px;
+    }
+
+    .subtitle {
+      font-size: clamp(22px, 5vw, 27px);
+      line-height: 1.5;
+      margin: 0 0 20px;
+      font-weight: 600;
+    }
+
+    .description {
+      font-size: clamp(19px, 4.5vw, 23px);
+      line-height: 1.6;
+      margin: 0 0 36px;
+    }
+
+    .button {
+      display: flex;
+      width: 100%;
+      min-height: 84px;
+      padding: 20px;
+      justify-content: center;
+      align-items: center;
+      background: #222222;
+      color: #ffffff;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: clamp(21px, 5vw, 25px);
+      font-weight: bold;
+      line-height: 1.3;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .button:active {
+      background: #555555;
+    }
+
+    .fallback {
+      margin-top: 24px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .fallback a {
+      color: #222222;
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 48px;
+      font-size: 15px;
+      letter-spacing: 1px;
+      color: #666666;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <h1>Donate to HCX!</h1>
+
+    <p class="subtitle">
+      Support Haiti Cultural Exchange
+    </p>
+
+    <p class="description">
+      Text your donation to Haiti Cultural Exchange
+      via your phone using Brooklyn Gives.
+    </p>
+
+    <a class="button"
+       href="sms:+18448446844?body=HCX"
+       onclick="sendText(); return false;">
+      Text HCX to 844-844-6844
+    </a>
+
+    <p class="fallback">
+      Having trouble?
+      <a href="sms:+18448446844?body=HCX">
+        Tap here to send your text.
+      </a>
+    </p>
+
+    <div class="footer">
+      HAITI CULTURAL EXCHANGE
+    </div>
+
+  </main>
+
+  <script>
+    function sendText() {
+      var isApple =
+        /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+        (navigator.platform === "MacIntel" &&
+         navigator.maxTouchPoints > 1);
+
+      var smsLink = isApple
+        ? "sms:+18448446844&body=HCX"
+        : "sms:+18448446844?body=HCX";
+
+      window.location.href = smsLink;
+    }
+  </script>
+
+</body>
+</html>
